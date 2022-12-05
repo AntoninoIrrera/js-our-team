@@ -70,27 +70,27 @@ const contenitore = document.querySelector("div.col-12");
 for(let i = 0; i < membriTeam.length; i++){
 
 
-    console.log(membriTeam[i]);
 
     const p = document.createElement("p");
-
+    const sfondo = document.createElement("div");
+    
+    
+    
     contenitore.append(p);
+    
+    
+    
+    
+    p.append(membriTeam[i].name + " ");
+    p.append(membriTeam[i].role + " ");
+    
+    sfondo.style.width = "350px";
+    sfondo.style.height = "350px";
+    sfondo.style.backgroundImage = `url(./img/${membriTeam[i].img} )`;
+    
+    p.append(sfondo);
 
-    for(let chiave in membriTeam[i]){
-        console.log(membriTeam[i][chiave]);
-
-        p.append(membriTeam[i][chiave] + " ")
-
-
-
-
-    }
-
-    // p.append(membriTeam[i].name);
-    // p.append(" : ");
-    // p.append(membriTeam[i].role);
-    // p.append(" : ");
-    // p.append(membriTeam[i].img);
+    
 
 
 
