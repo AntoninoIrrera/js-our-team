@@ -63,7 +63,7 @@ const membriTeam =[
 ];
 
 
-const contenitore = document.querySelector("div.col-12");
+const contenitoreOld = document.getElementById("outputOld");
 const bottoneAggiungi = document.querySelector("a.btn-primary");
 const nome = document.getElementById("nome");
 const ruolo = document.getElementById("ruolo");
@@ -83,7 +83,7 @@ for(let i = 0; i < membriTeam.length; i++){
 
     p.classList.add("p-3")
     
-    contenitore.append(p);
+    contenitoreOld.append(p);
     
     
     sfondo.style.width = "350px";
@@ -104,13 +104,14 @@ for(let i = 0; i < membriTeam.length; i++){
 
 }
 
+const contenitoreNew = document.getElementById("outputNew")
+const membriTeamAggiunti = [];
 
 bottoneAggiungi.addEventListener("click", function(){
 
+    contenitoreNew.innerHTML = "";
 
-    const membriTeamAggiunti = [];
-
-
+    
     membriTeamAggiunti.push({
         name : nome.value,
         role : ruolo.value,
@@ -127,7 +128,7 @@ bottoneAggiungi.addEventListener("click", function(){
         p.classList.add("p-3")
 
 
-        contenitore.append(p);
+        contenitoreNew.append(p);
 
         sfondo.style.width = "350px";
         sfondo.style.height = "350px";
@@ -144,6 +145,8 @@ bottoneAggiungi.addEventListener("click", function(){
 
 
     }
+
+
 
    
 
