@@ -76,11 +76,21 @@ for(let i = 0; i < membriTeam.length; i++){
 
     contenitore.append(p);
 
-    p.append(membriTeam[i].name);
-    p.append(" : ");
-    p.append(membriTeam[i].role);
-    p.append(" : ");
-    p.append(membriTeam[i].img);
+    for(let chiave in membriTeam[i]){
+        console.log(membriTeam[i][chiave]);
+
+        p.append(membriTeam[i][chiave] + " ")
+
+
+
+
+    }
+
+    // p.append(membriTeam[i].name);
+    // p.append(" : ");
+    // p.append(membriTeam[i].role);
+    // p.append(" : ");
+    // p.append(membriTeam[i].img);
 
 
 
