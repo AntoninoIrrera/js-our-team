@@ -74,21 +74,21 @@ for(let i = 0; i < membriTeam.length; i++){
     const p = document.createElement("p");
     const sfondo = document.createElement("div");
     
-    
+    p.classList.add("p-3")
     
     contenitore.append(p);
     
-    
-    
-    
-    p.append(membriTeam[i].name + " ");
-    p.append(membriTeam[i].role + " ");
     
     sfondo.style.width = "350px";
     sfondo.style.height = "350px";
     sfondo.style.backgroundImage = `url(./img/${membriTeam[i].img} )`;
     
     p.append(sfondo);
+    
+    
+    p.append(membriTeam[i].name + " ");
+    p.append(membriTeam[i].role + " ");
+    
 
     
 
