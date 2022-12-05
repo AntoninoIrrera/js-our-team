@@ -60,20 +60,27 @@ const membriTeam =[
         img: "barbara-ramos-graphic-designer.jpg",
     }
 
-
-
 ];
 
 
 const contenitore = document.querySelector("div.col-12");
+const bottoneAggiungi = document.querySelector("a.btn-primary");
+const nome = document.getElementById("nome");
+const ruolo = document.getElementById("ruolo");
+const immagineAggiunta = document.getElementById("immagine");
+
+
+
 
 for(let i = 0; i < membriTeam.length; i++){
-
-
-
+    
+    
     const p = document.createElement("p");
     const sfondo = document.createElement("div");
+    const aCapo = document.createElement("br");
+
     
+
     p.classList.add("p-3")
     
     contenitore.append(p);
@@ -86,8 +93,9 @@ for(let i = 0; i < membriTeam.length; i++){
     p.append(sfondo);
     
     
-    p.append(membriTeam[i].name + " ");
-    p.append(membriTeam[i].role + " ");
+    p.append(membriTeam[i].name);
+    p.append(aCapo);
+    p.append(membriTeam[i].role);
     
 
     
@@ -95,3 +103,51 @@ for(let i = 0; i < membriTeam.length; i++){
 
 
 }
+
+
+bottoneAggiungi.addEventListener("click", function(){
+
+
+    const membriTeamAggiunti = [];
+
+
+    membriTeamAggiunti.push({
+        name : nome.value,
+        role : ruolo.value,
+        img  : immagineAggiunta.value,  
+    })
+
+    for(let i = 0; i < membriTeamAggiunti.length; i++){
+
+        const p = document.createElement("p");
+        const sfondo = document.createElement("div");
+        const aCapo = document.createElement("br");
+
+
+        p.classList.add("p-3")
+
+
+        contenitore.append(p);
+
+        sfondo.style.width = "350px";
+        sfondo.style.height = "350px";
+        sfondo.style.backgroundImage = `url(${membriTeamAggiunti[i].img})`;
+        sfondo.style.backgroundPosition = "center";
+        sfondo.style.backgroundSize = "cover";
+
+
+        p.append(sfondo);
+
+        p.append(membriTeamAggiunti[i].name);
+        p.append(aCapo);
+        p.append(membriTeamAggiunti[i].role);
+
+
+    }
+
+   
+
+   
+
+
+});
